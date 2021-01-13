@@ -1,0 +1,13 @@
+.breach-code-input {
+	height: 40px;
+	width: 40px;
+}
+.breach-codes-input-container {
+	display: flex;
+	flex-direction: row;
+}
+.breach-codes-input-btn {
+	height: 45px;
+	width: 45px;
+	text-align: center;
+}

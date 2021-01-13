@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import SetupInput from './components/SetupInput/SetupInput';
+import ProtocolGrid from './components/ProtocolGrid/ProtocolGrid';
+// import SolutionOutput from './components/SolutionOutput/SolutionOutput';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [fillCharacters, setFillCharacters] = useState('');
+	return (
+		<div className='App'>
+			<header className='App-header'>
+				<h1>Cyberpunk Breach Protocol solver</h1>
+				<p>
+					This will help you download all 3 during the breach protocol in
+					Cyberpunk. The solution will give you the order in which to chose the
+					codes and the minimum buffer size.
+				</p>
+			</header>
+			<section>
+				<SetupInput
+					fillCharacters={fillCharacters}
+					setFillCharacters={setFillCharacters}
+				/>
+				<ProtocolGrid
+					fillCharacters={fillCharacters}
+					setFillCharacters={setFillCharacters}
+				/>
+				{/* <SolutionOutput /> */}
+			</section>
+		</div>
+	);
 }
 
 export default App;
